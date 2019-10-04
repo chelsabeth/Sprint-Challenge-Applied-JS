@@ -22,26 +22,33 @@ axios
     .get("https://lambda-times-backend.herokuapp.com/articles")
     .then(response => {
         console.log("Response for Articles", response.data.articles)
+        const articleNamesArray = Object.keys(response.data.articles);
+        console.log(articleNamesArray);
         const articleContainer = document.querySelector(".cards-container"); // articleContainer is now equal to the cards-container div in HTML
-        response.data.articles.bootstrap.forEach(element => { // loops through bootstrap array
-            articleContainer.appendChild(Article(element)); // makes the component that is returned from the Article function a child of the cards-container div in HTML
-        });
+        articleNamesArray.forEach(article => {
+            response.data.articles[article].forEach(element => {
+                articleContainer.appendChild(Article(element));
+            })
+        })
+        // response.data.articles.bootstrap.forEach(element => { // loops through bootstrap array
+        //     articleContainer.appendChild(Article(element)); // makes the component that is returned from the Article function a child of the cards-container div in HTML
+        // });
 
-        response.data.articles.javascript.forEach(element => { // loops through js array
-            articleContainer.appendChild(Article(element));
-        });
+        // response.data.articles.javascript.forEach(element => { // loops through js array
+        //     articleContainer.appendChild(Article(element));
+        // });
 
-        response.data.articles.jquery.forEach(element => { // loops through jquery array
-            articleContainer.appendChild(Article(element));
-        });
+        // response.data.articles.jquery.forEach(element => { // loops through jquery array
+        //     articleContainer.appendChild(Article(element));
+        // });
 
-        response.data.articles.node.forEach(element => { // loops throgugh node array
-            articleContainer.appendChild(Article(element));
-        });
+        // response.data.articles.node.forEach(element => { // loops throgugh node array
+        //     articleContainer.appendChild(Article(element));
+        // });
 
-        response.data.articles.technology.forEach(element => { // loops through technology array
-            articleContainer.appendChild(Article(element));
-        });
+        // response.data.articles.technology.forEach(element => { // loops through technology array
+        //     articleContainer.appendChild(Article(element));
+        // });
     })
     .catch(error => {
         console.log("Sorry, there was an error", error);
