@@ -25,7 +25,23 @@ axios
         const articleContainer = document.querySelector(".cards-container"); // articleContainer is now equal to the cards-container div in HTML
         response.data.articles.bootstrap.forEach(element => {
             articleContainer.appendChild(Article(element));
-        })
+        });
+
+        response.data.articles.javascript.forEach(element => {
+            articleContainer.appendChild(Article(element));
+        });
+
+        response.data.articles.jquery.forEach(element => {
+            articleContainer.appendChild(Article(element));
+        });
+
+        response.data.articles.node.forEach(element => {
+            articleContainer.appendChild(Article(element));
+        });
+
+        response.data.articles.technology.forEach(element => {
+            articleContainer.appendChild(Article(element));
+        });
     })
     .catch(error => {
         console.log("Sorry, there was an error", error);
@@ -53,7 +69,7 @@ axios
         newArticle.classList.add("card");
         headline.classList.add("headline");
         author.classList.add("author");
-        imgConatainer.classList.add("img-container");
+        imgContainer.classList.add("img-container");
 
         // Assing elements with data
         headline.textContent = `${data.headline}`;
