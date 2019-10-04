@@ -13,11 +13,15 @@ axios
     .then(response => {
         console.log("Reponse for Tabs", response.data.topics);
         const topics = document.querySelector(".topics");
+        response.data.topics.forEach(element => {
+            topics.appendChild(Tab(element));
+        });
     })
     .catch(error => {
         console.log("Sorry, there was an error", error);
     });
 
+    
     function Tab(data) {
 
         // Define new elements
@@ -27,7 +31,7 @@ axios
         newTab.classList.add('tab');
 
         // Assign element with data
-        newTab.textContent = data;
+        newTab.textContent = `${data.topics}`;
 
         return newTopic;
     }
