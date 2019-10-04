@@ -23,23 +23,23 @@ axios
     .then(response => {
         console.log("Response for Articles", response.data.articles)
         const articleContainer = document.querySelector(".cards-container"); // articleContainer is now equal to the cards-container div in HTML
-        response.data.articles.bootstrap.forEach(element => {
+        response.data.articles.bootstrap.forEach(element => { // loops through bootstrap array
+            articleContainer.appendChild(Article(element)); // makes the component that is returned from the Article function a child of the cards-container div in HTML
+        });
+
+        response.data.articles.javascript.forEach(element => { // loops through js array
             articleContainer.appendChild(Article(element));
         });
 
-        response.data.articles.javascript.forEach(element => {
+        response.data.articles.jquery.forEach(element => { // loops through jquery array
             articleContainer.appendChild(Article(element));
         });
 
-        response.data.articles.jquery.forEach(element => {
+        response.data.articles.node.forEach(element => { // loops throgugh node array
             articleContainer.appendChild(Article(element));
         });
 
-        response.data.articles.node.forEach(element => {
-            articleContainer.appendChild(Article(element));
-        });
-
-        response.data.articles.technology.forEach(element => {
+        response.data.articles.technology.forEach(element => { // loops through technology array
             articleContainer.appendChild(Article(element));
         });
     })
