@@ -22,6 +22,10 @@ axios
     .get("https://lambda-times-backend.herokuapp.com/articles")
     .then(response => {
         console.log("Response for Articles", response.data.articles)
+        const articleContainer = document.querySelector(".cards-container"); // articleContainer is now equal to the cards-container div in HTML
+        response.data.articles.bootstrap.forEach(element => {
+            articleContainer.appendChild(Article(element));
+        })
     })
     .catch(error => {
         console.log("Sorry, there was an error", error);
@@ -29,7 +33,7 @@ axios
 
 
 
-    function article(data) {
+    function Article(data) {
         // Define new elements
         const newArticle = document.createElement("div"),
         headline = document.createElement("div"),
