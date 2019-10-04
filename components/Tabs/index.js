@@ -25,13 +25,13 @@ axios
     function Tab(data) {
 
         // Define new elements
-        newTopic.createElement("div");
+        const newTopic = document.createElement("div");
 
         // Give class name
-        newTab.classList.add('tab');
+        newTopic.classList.add('tab');
 
         // Assign element with data
-        newTab.textContent = `${data.topics}`;
+        newTopic.textContent = `${data.topics}`;
 
         return newTopic;
     }
