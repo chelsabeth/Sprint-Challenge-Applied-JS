@@ -36,8 +36,12 @@ axios
         author = document.createElement("div"),
         imgContainer = document.createElement("div"),
         img = document.createElement("img"),
-        author = document.createElement("span");
+        authorsName = document.createElement("span");
 
-        
-
+        //Setup structure
+        newArticle.appendChild(headline);
+        newArticle.appendChild(author);
+        author.appendChild(imgContainer);
+        imgContainer.appendChild(img);
+        author.appendChild(authorsName);
     }
