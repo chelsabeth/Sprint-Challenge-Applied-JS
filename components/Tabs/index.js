@@ -23,7 +23,6 @@ axios
 
     
     function Tab(data) {
-
         // Define new elements
         const newTopic = document.createElement("div");
 

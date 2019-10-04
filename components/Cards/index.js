@@ -26,3 +26,18 @@ axios
     .catch(error => {
         console.log("Sorry, there was an error", error);
     });
+
+
+
+    function article(data) {
+        // Define new elements
+        const newArticle = document.createElement("div"),
+        headline = document.createElement("div"),
+        author = document.createElement("div"),
+        imgContainer = document.createElement("div"),
+        img = document.createElement("img"),
+        author = document.createElement("span");
+
+        
+
+    }
