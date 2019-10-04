@@ -74,7 +74,7 @@ axios
         // Assing elements with data
         headline.textContent = `${data.headline}`;
         img.src = `${data.authorPhoto}`;
-        authorsName.textContent = `${data.authorsName}`;
+        authorsName.textContent = `${data.authorName}`;
 
         return newArticle;
     }
