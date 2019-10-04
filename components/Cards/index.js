@@ -38,10 +38,19 @@ axios
         img = document.createElement("img"),
         authorsName = document.createElement("span");
 
-        //Setup structure
+        // Setup structure
         newArticle.appendChild(headline);
         newArticle.appendChild(author);
         author.appendChild(imgContainer);
         imgContainer.appendChild(img);
         author.appendChild(authorsName);
+
+        // Give class names
+        newArticle.classList.add("card");
+        headline.classList.add("headline");
+        author.classList.add("author");
+        imgConatainer.classList.add("img-container");
+
+        // Assing elements with data
+        
     }
