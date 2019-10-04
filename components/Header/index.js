@@ -28,3 +28,6 @@ function Header() {
 
     return newHeader;
 }
+
+const headerContainer = document.querySelector(".header-container"); // headerContainer is now equal to the header-container div in HTML 
+headerContainer.appendChild(Header()); // makes the component that is returned from the Header function a child of the header-container div in HTML
