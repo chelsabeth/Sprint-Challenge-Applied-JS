@@ -52,5 +52,9 @@ axios
         imgConatainer.classList.add("img-container");
 
         // Assing elements with data
-        
+        headline.textContent = `${data.headline}`;
+        img.src = `${data.authorPhoto}`;
+        authorsName.textContent = `${data.authorsName}`;
+
+        return newArticle;
     }
