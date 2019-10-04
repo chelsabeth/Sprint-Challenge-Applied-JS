@@ -9,4 +9,22 @@
 //  </div >
 // And add it to the DOM in the .header-container component
 
-function Header() {}
+function Header() {
+    // Define new elements 
+    const newHeader = document.createElement('div'),
+    date = document.createElement('span'),
+    title = document.createElement('h1'),
+    temp = document.createElement('span');
+
+    // Setup structure
+    newHeader.appendChild(date);
+    newHeader.appendChild(title);
+    newHeader.appendChild(temp);
+
+    // Give class names--defined in template
+    newHeader.classList.add('header');
+    date.classList.add('date');
+    temp.classList.add('temp');
+
+    return newHeader;
+}
