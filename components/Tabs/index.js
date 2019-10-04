@@ -12,9 +12,9 @@ axios
     .get("https://lambda-times-backend.herokuapp.com/topics")
     .then(response => {
         console.log("Reponse for Tabs", response.data.topics);
-        const topics = document.querySelector(".topics");
-        response.data.topics.forEach(element => {
-            topics.appendChild(Tab(element));
+        const topics = document.querySelector(".topics"); // topics is now equal to the topics div in HTML 
+        response.data.topics.forEach(element => { // loops through the topics array 
+            topics.appendChild(Tab(element)); // makes the component that is returned from the Tab function a child of the topics div in the HTML 
         });
     })
     .catch(error => {
